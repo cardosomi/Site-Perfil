@@ -1,0 +1,152 @@
+:root {
+    --background: #f1f1f1;
+    --title: #ea64fc;
+    --font: #000000;
+    --mainColor: #d55ee0;
+    --footer: #524b4b;
+
+    --fs-small: clamp(0.8rem, 2vw, 1rem);
+    --fs-medium: clamp(1rem, 2.5vw, 1.5rem);
+    --fs-large: clamp(1.25rem, 3vw, 2rem);
+
+    --spacing-small: clamp(0.5rem, 1vw, 1rem);
+    --spacing-medium: clamp(1rem, 2vw, 1.5rem);
+
+    --image-size: clamp(150px, 20vw, 225px);
+}
+
+body.dark-mode {
+    --background: #222020;
+    --title: #dd88ff;
+    --font: #ffffff;
+    --mainColor: #ea00ff;
+    --footer: #524b4b;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--font);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 4px;
+    padding: 0;
+}
+    
+h1{
+    color: var(--title);
+    font-size: var(--fs-large);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p, h2{
+    text-align: center;
+    padding: 10px;
+    font-size: var(--fs-medium);
+}
+
+#titulo-parte{
+    color: var(--background);
+}
+
+#cabecalho{
+    padding: 5px;
+    text-align: center;
+    font-size: var(--fs-large);
+}
+
+.container {
+    display: flex;
+    gap: var(--spacing-large); 
+    justify-content: space-between; 
+}
+
+.container-Imagem{
+    position: relative; 
+    text-align: center;
+    display: flex;
+    flex: 2;
+    gap: var(--spacing-large); 
+}
+
+.artigoDetalhes, .artigoSobreMim{
+    background-color: var(--background);
+    color: var(--font);
+    text-align: center;
+    border-radius: 2px;
+    flex: 2;
+}
+
+.artigoMirela{
+    background-color: var(--mainColor);
+    color: var(--background);
+    text-align: center;
+    border-radius: 10px;
+    flex: 2;
+    padding-top: 20%;
+}
+
+button{
+    color: var(--font);
+    cursor: pointer;
+    border: 2px solid var(--mainColor);
+    font-size: var(--fs-medium);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: var(--spacing-medium);
+    border-radius: 50px;
+    background-color: var(--background);   
+    transition-duration: 0.4s;
+}
+
+button a{
+    color: var(--font);
+    transition-duration: 0.2s;
+}
+
+button:hover {
+    background-color: var(--mainColor);
+    color: var(--background);
+}
+
+button a:hover {
+    color: var(--background);
+}
+
+
+img{
+    width: var(--image-size);
+    height: var(--image-size); 
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: calc(-1 * var(--image-size) / 2);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+  #rodapé{
+        padding: var(--spacing-medium);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+#rodapé p{
+    color: var(--background);
+}
+
+@media (max-width: 767px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .artigoMirela {
+        margin-top: calc(-1 *var(--image-size) / 2);
+    }
+    
+    .container-Imagem {
+        gap: var(--spacing-medium);
+    }
+}
